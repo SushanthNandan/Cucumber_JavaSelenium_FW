@@ -14,12 +14,12 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import resources.ObjectRepository;
+import pages.ObjectRepository;
 import utilities.GenericUtils;
 
 public class Homepage {
 
-	WebDriver driver;
+	static WebDriver driver;
 	public static SoftAssert softassert = new SoftAssert();
 	public GenericUtils utils;
 	public static HashMap<String, HashMap<String, String>> videosList = new HashMap<String, HashMap<String, String>>();
@@ -75,19 +75,7 @@ public class Homepage {
 		}
 	}
 
-	@And("^navigate to myvideos page \"([^\"]*)\"$")
-	public void navigate_to_myvideos_page(String url) throws Throwable {
-
-		try {
-			utils = new GenericUtils(driver);
-			driver.navigate().to(Hooks.propsObject.getProperty(url));
-			utils.waitUntilPageLoads();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-
-		}
-	}
+	
 
 	@Then("^validate the video title and description in favorite list$")
 	public void validate_the_video_title_and_description() throws Throwable {
