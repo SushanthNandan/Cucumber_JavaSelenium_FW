@@ -10,8 +10,11 @@ Features:
 Stepdefs:
     It contains step definitions class for corresponding feature file. Also, it has Hooks class, which are blocks of code that run before or after each scenario.
     
+Pages:
+    It contains objectrepository class (Locators/page factory for each page)
+    
 Resources:
-    It contains objectrepository class (Locators/Web Elements for each page) and properties file (Constant values like URL, username, etc.) which can be used across multiple functions.
+     It contains properties file (Constant values like URL, username, etc.) which can be used across multiple functions.
     
 Utilities:
     It contains GenericUitls class which has all generic methods like (Click, Wait, Get Text, Actions, etc.). These methods can be reused across the project.
